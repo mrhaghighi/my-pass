@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Livewire\Credentials\Index as CredentialsIndex;
+use App\Http\Livewire\Credentials\Show as CredentialsShow;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,5 +26,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     })->name('dashboard');
 
     // Credentials index
-    Route::get('/credentials', CredentialsIndex::class)->name('credentials');
+    Route::get('/credentials', CredentialsIndex::class)->name('credentials.index');
+
+    // Credential signle page
+    Route::get('/credentials/{id}', CredentialsShow::class)->name('credentials.show');
 });

@@ -3,7 +3,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-4">
                 <!-- Title -->
-                <h1 class="text-bold text-lg">Credentials ({{ $credentials->count() }})</h1>
+                <h1 class="text-lg">Credentials ({{ $credentials->count() }})</h1>
 
                 <table class="table-auto min-w-full mt-8">
                     <thead>
