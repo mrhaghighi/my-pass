@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Credentials;
 
+use App\Models\Credential;
 use Livewire\Component;
 
 class Index extends Component
@@ -13,6 +14,9 @@ class Index extends Component
      */
     public function render()
     {
-        return view('livewire.credentials.index');
+        $credentials = Credential::where('user_id', auth()->id())
+            ->paginate(20);
+
+        return view('livewire.credentials.index', compact('credentials'));
     }
 }
