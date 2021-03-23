@@ -4,11 +4,11 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-4">
                 <!-- Title -->
                 <div class="flex flex-row justify-start items-center">
-                    <h1 class="text-lg">Credentials ({{ $credentials->count() }})</h1>
+                    <h1 class="text-lg">Credentials</h1>
                     <a href="{{ route('credentials.create') }}" class="bg-blue-400 text-white px-4 py-1 ml-4 rounded text-sm">Create new credential</a>
                 </div>
 
-                <table class="table-auto min-w-full mt-8">
+                <table class="table-auto min-w-full my-8">
                     <thead>
                         <tr class="text-left border-b-2 border-gray-400">
                             <th class="w-3/12 pb-2">Name</th>
@@ -39,10 +39,11 @@
                                 </td>
                             </tr>
                         @endforeach
-
-                        {{ $credentials->links() }}
                     </tbody>
                 </table>
+
+                <!-- Pagination -->
+                {{ $credentials->links() }}
             </div>
         </div>
     </div>

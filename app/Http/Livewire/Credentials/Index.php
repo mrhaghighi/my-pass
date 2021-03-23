@@ -15,7 +15,8 @@ class Index extends Component
     public function render()
     {
         $credentials = Credential::where('user_id', auth()->id())
-            ->paginate(20);
+            ->latest()
+            ->paginate(10);
 
         return view('livewire.credentials.index', compact('credentials'));
     }

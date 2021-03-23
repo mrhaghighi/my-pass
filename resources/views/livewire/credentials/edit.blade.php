@@ -7,6 +7,9 @@
                     <h1 class="text-lg">Credential "{{ $credential->name ?? 'No Name' }}"</h1>
                 </div>
 
+                <!-- Error messages -->
+                @include('layouts.error-alerts')
+
                 <!-- Details -->
                 <div class="mt-8">
                     <input type="hidden" name="user_id" value="{{ $credential->user_id }}">
