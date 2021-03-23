@@ -30,8 +30,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/credentials', CredentialsIndex::class)->name('credentials.index');
 
     // Credential signle page
-    Route::get('/credentials/{id}', CredentialsShow::class)->name('credentials.show');
+    Route::get('/credentials/{credential}', CredentialsShow::class)->name('credentials.show');
 
     // Credential signle page (Edit)
-    Route::get('/credentials/{id}/edit', CredentialsEdit::class)->name('credentials.edit');
+    Route::get('/credentials/{credential}/edit', CredentialsEdit::class)->name('credentials.edit');
 });

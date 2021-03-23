@@ -4,13 +4,21 @@ namespace App\Http\Livewire\Credentials;
 
 use App\Models\Credential;
 use App\Models\CredentialType;
-use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Support\Facades\Crypt;
-use Illuminate\Support\Facades\Log;
 use Livewire\Component;
 
 class Edit extends Component
 {
+    use AuthorizesRequests;
+
+    /**
+     * Credential
+     *
+     * @var Credential
+     */
+    public $credential;
+
     /**
      * Credential ID
      *
@@ -82,29 +90,33 @@ class Edit extends Component
     ];
 
     /**
+     * Mount data
+     *
+     * @param Credential $credential
+     * @return void
+     */
+    public function mount(Credential $credential)
+    {
+        $this->credential = $credential;
+    }
+
+    /**
      * Render page
      *
      * @return view()
      */
-    public function render(Request $request)
+    public function render()
     {
-        // Fetch credential
-        $credentialId = $request->route('id');
-        $credential = Credential::find($credentialId);
+        // Authorize request
+        $this->authorize('update', $this->credential);
 
         // Init form data
-        $this->initData($credential);
+        $this->initData($this->credential);
 
         // Credential types
         $credentialTypes = CredentialType::get();
 
-        // User not allowed for seen credential
-        if (auth()->id() != $credential->user_id) {
-            Log::critical('[Unauthorized] - Some one wants access to a forbidden credential. User ID: ' . auth()->id());
-            abort(403);
-        }
-
-        return view('livewire.credentials.edit', compact('credential', 'credentialTypes'));
+        return view('livewire.credentials.edit', compact('credentialTypes'));
     }
 
     /**
@@ -134,14 +146,11 @@ class Edit extends Component
      */
     public function update()
     {
+        // Authorize request
+        $this->authorize('update', $this->credential);
+
         // Validate data
         $this->validate();
-
-        // User not allowed for seen credential
-        if (auth()->id() != $this->userId) {
-            Log::critical('[Unauthorized] - Some one wants access to a forbidden credential. User ID: ' . auth()->id());
-            abort(403);
-        }
 
         // Update credential
         Credential::where('id', $this->credentialId)->update([
@@ -153,6 +162,6 @@ class Edit extends Component
             'email'    => $this->email,
         ]);
 
-        return redirect()->route('credentials.show', ['id' => $this->credentialId]);
+        return redirect()->route('credentials.show', ['credential' => $this->credential]);
     }
 }

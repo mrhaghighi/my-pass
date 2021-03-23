@@ -26,8 +26,8 @@
                                 </td>
                                 <td class="py-3">{{ $credential->updated_at }}</td>
                                 <td class="py-3">
-                                    <a href="{{ route('credentials.show', ['id' => $credential->id]) }}" class="bg-blue-400 text-white px-4 py-1 m-1 rounded text-sm">Details</a>
-                                    <a href="{{ route('credentials.edit', ['id' => $credential->id]) }}" class="bg-yellow-400 text-white px-4 py-1 m-1 rounded text-sm">Update</a>
+                                    <a href="{{ route('credentials.show', ['credential' => $credential]) }}" class="bg-blue-400 text-white px-4 py-1 m-1 rounded text-sm">Details</a>
+                                    <a href="{{ route('credentials.edit', ['credential' => $credential]) }}" class="bg-yellow-400 text-white px-4 py-1 m-1 rounded text-sm">Update</a>
                                     <button class="bg-red-400 text-white px-4 py-1 m-1 rounded text-sm">Remove</button>
                                 </td>
                             </tr>

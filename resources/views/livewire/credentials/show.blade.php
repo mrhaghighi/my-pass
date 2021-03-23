@@ -5,7 +5,7 @@
                 <!-- Title -->
                 <div class="flex flex-row justify-start items-center">
                     <h1 class="text-lg">Credential "{{ $credential->name ?? 'No Name' }}"</h1>
-                    <a href="{{ route('credentials.edit', ['id' => $credential->id]) }}" class="bg-yellow-400 text-white px-4 py-1 ml-4 rounded text-sm">Update</a>
+                    <a href="{{ route('credentials.edit', ['credential' => $credential]) }}" class="bg-yellow-400 text-white px-4 py-1 ml-4 rounded text-sm">Update</a>
                 </div>
 
                 <!-- Details -->
