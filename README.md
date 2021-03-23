@@ -1,6 +1,6 @@
 # Summary
 
-This project was created with `Laravel 8`. This project is password management. We have two primary entities. First, `Credential Type` such a **Google**, **Yahoo**, Second, `Credential` that it is an instance of a credential type. For example, **My google account**. We can have some different accounts (Credential) on one website (Credential Type). The technologies used in this project are `Laravel` as a core of the software, `MySQL` as a database, `LiveWire` as a front-end helper. This app is almost responsive.
+This project was created with `Laravel 8`. This project is password management. We have two primary entities. First, `Credential Type` such a **Google**, **Yahoo**, Second, `Credential` that it is an instance of a credential type. For example, **My google account**. We can have some different accounts (Credential) on one website (Credential Type). The technologies used in this project are `Laravel` as a core of the software, `MySQL` as a database, `LiveWire` as a front-end helper. This app is almost responsive. Also, I've prepared `Dockerfile` for this project that you can use for the DevOps side. `.gitlab-ci.yml` will be added in the next update to handle CI/CD.
 
 ## Getting Started
 
