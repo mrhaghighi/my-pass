@@ -19,6 +19,13 @@ class Show extends Component
     public $credential;
 
     /**
+     * Password visibility
+     *
+     * @var boolean
+     */
+    public $passwordVisibility = false;
+
+    /**
      * Mount data
      *
      * @param Credential $credential
@@ -40,5 +47,15 @@ class Show extends Component
         $this->authorize('view', $this->credential);
 
         return view('livewire.credentials.show');
+    }
+
+    /**
+     * Password visibility toggler
+     *
+     * @return void
+     */
+    public function passwordVisibilityToggler()
+    {
+        $this->passwordVisibility = !$this->passwordVisibility;
     }
 }
