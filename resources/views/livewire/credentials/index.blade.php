@@ -24,7 +24,7 @@
                                 <td class="py-3">{{ $credential->name ?? 'No Name' }}</td>
                                 <td class="py-3">
                                     <div class="flex flex-row justify-start items-center">
-                                        <img src="{{ $credential->type->avatar ?? '-' }}" alt="Credential Password" width="25px" height="25px">
+                                        <img src="{{ $credential->type->avatar ?? '-' }}" alt="Credential Password" width="35px" height="35px" class="mr-2 rounded">
                                         <div>{{ $credential->type->name }}</div>
                                     </div>
                                 </td>
