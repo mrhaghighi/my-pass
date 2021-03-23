@@ -2,6 +2,7 @@
 
 use App\Http\Livewire\Credentials\Index as CredentialsIndex;
 use App\Http\Livewire\Credentials\Show as CredentialsShow;
+use App\Http\Livewire\Credentials\Edit as CredentialsEdit;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,4 +31,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     // Credential signle page
     Route::get('/credentials/{id}', CredentialsShow::class)->name('credentials.show');
+
+    // Credential signle page (Edit)
+    Route::get('/credentials/{id}/edit', CredentialsEdit::class)->name('credentials.edit');
 });

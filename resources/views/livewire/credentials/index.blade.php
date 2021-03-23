@@ -8,9 +8,10 @@
                 <table class="table-auto min-w-full mt-8">
                     <thead>
                         <tr class="text-left">
-                            <th class="w-5/12">Name</th>
-                            <th class="w-2/12">Type</th>
-                            <th class="w-5/12">Settings</th>
+                            <th class="w-3/12">Name</th>
+                            <th class="w-3/12">Type</th>
+                            <th class="w-3/12">Last Update</th>
+                            <th class="w-3/12">Settings</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -23,9 +24,10 @@
                                         <div>{{ $credential->type->name }}</div>
                                     </div>
                                 </td>
+                                <td class="py-3">{{ $credential->updated_at }}</td>
                                 <td class="py-3">
-                                    <button class="bg-blue-400 text-white px-4 py-1 m-1 rounded text-sm">Details</button>
-                                    <button class="bg-yellow-400 text-white px-4 py-1 m-1 rounded text-sm">Update</button>
+                                    <a href="{{ route('credentials.show', ['id' => $credential->id]) }}" class="bg-blue-400 text-white px-4 py-1 m-1 rounded text-sm">Details</a>
+                                    <a href="{{ route('credentials.edit', ['id' => $credential->id]) }}" class="bg-yellow-400 text-white px-4 py-1 m-1 rounded text-sm">Update</a>
                                     <button class="bg-red-400 text-white px-4 py-1 m-1 rounded text-sm">Remove</button>
                                 </td>
                             </tr>

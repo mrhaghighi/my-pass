@@ -3,12 +3,15 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-4">
                 <!-- Title -->
-                <h1 class="text-lg">Credential "{{ $credential->name ?? 'No Name' }}"</h1>
+                <div class="flex flex-row justify-start items-center">
+                    <h1 class="text-lg">Credential "{{ $credential->name ?? 'No Name' }}"</h1>
+                    <a href="{{ route('credentials.edit', ['id' => $credential->id]) }}" class="bg-yellow-400 text-white px-4 py-1 ml-4 rounded text-sm">Update</a>
+                </div>
 
                 <!-- Details -->
                 <div class="mt-8">
                     <div class="flex flex-row my-3">
-                        <div class="font-bold w-1/12 w-1/12">Name: </div> 
+                        <div class="font-bold w-1/12">Name: </div> 
                         <div class="w-11/12">{{ $credential->name ?? 'No Name' }}</div>
                     </div>
                     <div class="flex flex-row my-3">
