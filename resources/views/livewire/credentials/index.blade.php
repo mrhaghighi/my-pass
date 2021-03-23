@@ -7,11 +7,11 @@
 
                 <table class="table-auto min-w-full mt-8">
                     <thead>
-                        <tr class="text-left">
-                            <th class="w-3/12">Name</th>
-                            <th class="w-3/12">Type</th>
-                            <th class="w-3/12">Last Update</th>
-                            <th class="w-3/12">Settings</th>
+                        <tr class="text-left border-b-2 border-gray-400">
+                            <th class="w-3/12 pb-2">Name</th>
+                            <th class="w-3/12 pb-2">Type</th>
+                            <th class="w-3/12 pb-2">Last Update</th>
+                            <th class="w-3/12 pb-2">Settings</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -25,10 +25,14 @@
                                     </div>
                                 </td>
                                 <td class="py-3">{{ $credential->updated_at }}</td>
-                                <td class="py-3">
+                                <td class="py-3 flex flex-row justify-start items-center">
                                     <a href="{{ route('credentials.show', ['credential' => $credential]) }}" class="bg-blue-400 text-white px-4 py-1 m-1 rounded text-sm">Details</a>
                                     <a href="{{ route('credentials.edit', ['credential' => $credential]) }}" class="bg-yellow-400 text-white px-4 py-1 m-1 rounded text-sm">Update</a>
-                                    <button class="bg-red-400 text-white px-4 py-1 m-1 rounded text-sm">Remove</button>
+                                    <form action="{{ route('credentials.remove', ['credential' => $credential]) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="bg-red-400 text-white px-4 py-1 m-1 rounded text-sm">Remove</button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach

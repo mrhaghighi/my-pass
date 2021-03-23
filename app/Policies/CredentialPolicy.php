@@ -65,7 +65,7 @@ class CredentialPolicy
      */
     public function delete(User $user, Credential $credential)
     {
-        //
+        return $user->id === $credential->user_id;
     }
 
     /**

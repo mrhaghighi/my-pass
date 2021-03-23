@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CredentialController;
 use App\Http\Livewire\Credentials\Index as CredentialsIndex;
 use App\Http\Livewire\Credentials\Show as CredentialsShow;
 use App\Http\Livewire\Credentials\Edit as CredentialsEdit;
@@ -34,4 +35,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     // Credential signle page (Edit)
     Route::get('/credentials/{credential}/edit', CredentialsEdit::class)->name('credentials.edit');
+
+    // Delete credential
+    Route::delete('/credentials/{credential}', [CredentialController::class, 'remove'])->name('credentials.remove');
 });
