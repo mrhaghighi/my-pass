@@ -10,6 +10,23 @@ use Illuminate\Validation\UnauthorizedException;
 class CredentialRepository
 {
     /**
+     * Create credential
+     *
+     * @param array $data
+     * @return boolean
+     */
+    public function create(array $data): bool
+    {
+        // Create credential
+        $credential = Credential::create($data);
+
+        // Log activity
+        Log::info("[Credential][Create] - Credential with {$credential->id} created succesfully");
+
+        return true;
+    }
+
+    /**
      * Update credential
      *
      * @param integer $id

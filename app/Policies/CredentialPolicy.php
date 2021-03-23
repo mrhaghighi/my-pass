@@ -41,7 +41,7 @@ class CredentialPolicy
      */
     public function create(User $user)
     {
-        //
+        return auth()->check();
     }
 
     /**

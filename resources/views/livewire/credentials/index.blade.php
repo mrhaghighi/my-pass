@@ -3,7 +3,10 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-4">
                 <!-- Title -->
-                <h1 class="text-lg">Credentials ({{ $credentials->count() }})</h1>
+                <div class="flex flex-row justify-start items-center">
+                    <h1 class="text-lg">Credentials ({{ $credentials->count() }})</h1>
+                    <a href="{{ route('credentials.create') }}" class="bg-blue-400 text-white px-4 py-1 ml-4 rounded text-sm">Create new credential</a>
+                </div>
 
                 <table class="table-auto min-w-full mt-8">
                     <thead>
