@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Credentials;
 
 use App\Models\Credential;
 use App\Models\CredentialType;
+use App\Repositories\CredentialRepository;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Support\Facades\Crypt;
 use Livewire\Component;
@@ -146,21 +147,21 @@ class Edit extends Component
      */
     public function update()
     {
-        // Authorize request
-        $this->authorize('update', $this->credential);
-
         // Validate data
         $this->validate();
 
         // Update credential
-        Credential::where('id', $this->credentialId)->update([
+        $updatedCredential = [
             'name'     => $this->name,
             'type_id'  => $this->typeId,
             'url'      => $this->url,
             'username' => $this->username,
             'password' => Crypt::encryptString($this->password),
             'email'    => $this->email,
-        ]);
+        ];
+
+        // Update credential
+        (new CredentialRepository())->update($this->credential->id, $updatedCredential);
 
         return redirect()->route('credentials.show', ['credential' => $this->credential]);
     }
