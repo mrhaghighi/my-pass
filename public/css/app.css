@@ -32717,6 +32717,23 @@ select {
           animation: bounce 1s infinite;
 }
 
+@media only screen and (max-width: 600px) {
+  #credentials__table .th--header {
+    display: none;
+  }
+
+  #credentials__table tr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.05);
+    margin: 10px 0;
+    border: none;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  }
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -192176,4 +192193,3 @@ select {
             animation: bounce 1s infinite;
   }
 }
-

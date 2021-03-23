@@ -11,39 +11,39 @@
                 <!-- Details -->
                 <div class="mt-8">
                     <div class="flex flex-row my-3">
-                        <div class="font-bold w-1/12">Name: </div> 
-                        <div class="w-11/12">{{ $credential->name ?? 'No Name' }}</div>
+                        <div class="font-bold w-max mr-2">Name: </div> 
+                        <div>{{ $credential->name ?? 'No Name' }}</div>
                     </div>
                     <div class="flex flex-row my-3">
-                        <div class="font-bold w-1/12">Type: </div> 
-                        <div class="w-11/12">{{ $credential->type->name ?? 'No Name' }}</div>
+                        <div class="font-bold w-max mr-2">Type: </div> 
+                        <div>{{ $credential->type->name ?? 'No Name' }}</div>
                     </div>
                     <div class="flex flex-row my-3">
-                        <div class="font-bold w-1/12">URL: </div> 
-                        <div class="w-11/12">
+                        <div class="font-bold w-max mr-2">URL: </div> 
+                        <div>
                             {!! '<a href="$credential->url" class="text-blue-400 underline">Go to website</a>' ?? 'No URL' !!}
                         </div>
                     </div>
                     <div class="flex flex-row my-3">
-                        <div class="font-bold w-1/12">Username: </div>
-                        <div class="w-11/12">{{ $credential->username }}</div>
+                        <div class="font-bold w-max mr-2">Username: </div>
+                        <div>{{ $credential->username }}</div>
                     </div>
                     <div class="flex flex-row my-3">
-                        <div class="font-bold w-1/12">Password: </div>
+                        <div class="font-bold w-max mr-2 flex flex-jusify-center items-center">Password: </div>
                         @if ($passwordVisibility) 
-                            <div id="decrypted_password" class="w-1/12 flex flex-row items-center">{{ $credential->decrypted_password }}</div>
+                            <div id="decrypted_password" class="w-max mr-2 flex flex-row items-center">{{ $credential->decrypted_password }}</div>
                         @else
-                            <input id="decrypted_password__input" type="hidden" class="w-1/12 flex flex-row items-center" value="{{ $credential->decrypted_password }}" />
-                            <div id="masked_password" class="w-1/12 flex flex-row items-center">*************</div>
+                            <input id="decrypted_password__input" type="hidden" class="w-max mr-2 flex flex-row items-center" value="{{ $credential->decrypted_password }}" />
+                            <div id="masked_password" class="w-max mr-2 flex flex-row items-center">*************</div>
                         @endif
                         <div class="w-10/12">
-                            <button class="bg-red-400 text-white px-4 py-1 ml-4 rounded text-sm" wire:click="passwordVisibilityToggler()">{{ $passwordVisibility ? 'Hidden' : 'Show' }} Password</button>
-                            <button class="bg-yellow-400 text-white px-4 py-1 ml-4 rounded text-sm" onclick="copyPassword()">Copy Password</button>
+                            <button class="bg-red-400 text-white px-4 py-1 m-1 ml-4 rounded text-sm" wire:click="passwordVisibilityToggler()">{{ $passwordVisibility ? 'Hidden' : 'Show' }} Password</button>
+                            <button class="bg-yellow-400 text-white px-4 py-1 m-1 ml-4 rounded text-sm" onclick="copyPassword()">Copy Password</button>
                         </div>
                     </div>
                     <div class="flex flex-row my-3">
-                        <div class="font-bold w-1/12">Email: </div>
-                        <div class="w-11/12">{{ $credential->email ?? 'No Email' }}</div>
+                        <div class="font-bold w-max mr-2">Email: </div>
+                        <div>{{ $credential->email ?? 'No Email' }}</div>
                     </div>
                 </div>
             </div>

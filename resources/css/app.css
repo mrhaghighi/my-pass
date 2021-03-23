@@ -1,3 +1,20 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@media only screen and (max-width: 600px) { 
+    #credentials__table .th--header {
+        display: none;
+    }
+
+    #credentials__table tr {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.05);
+        margin: 10px 0;
+        border: none;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+    }
+}

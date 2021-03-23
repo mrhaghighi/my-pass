@@ -9,9 +9,9 @@
                 </div>
 
                 <!-- Details -->
-                <table class="table-auto min-w-full my-8">
+                <table id="credentials__table" class="table-auto min-w-full my-8">
                     <thead>
-                        <tr class="text-left border-b-2 border-gray-400">
+                        <tr class="text-left border-b-2 border-gray-400 th--header">
                             <th class="w-3/12 pb-2">Name</th>
                             <th class="w-3/12 pb-2">Type</th>
                             <th class="w-3/12 pb-2">Last Update</th>

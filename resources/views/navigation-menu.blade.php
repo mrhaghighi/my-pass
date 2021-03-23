@@ -147,6 +147,12 @@
             <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-jet-responsive-nav-link>
+            <x-jet-responsive-nav-link href="{{ route('credentials.index') }}" :active="request()->routeIs('credentials.*') && !request()->routeIs('credentials.types')">
+                Credentials
+            </x-jet-responsive-nav-link>
+            <x-jet-responsive-nav-link href="{{ route('credentials.types') }}" :active="request()->routeIs('credentials.types')">
+                Credential Types
+            </x-jet-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
