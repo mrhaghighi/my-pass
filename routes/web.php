@@ -19,15 +19,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::redirect('/', '/dashboard');
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     // Dashboard
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::view('/dashboard', 'dashboard')->name('dashboard');
 
     // Credentials index
     Route::get('/credentials', CredentialsIndex::class)->name('credentials.index');
