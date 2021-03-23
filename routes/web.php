@@ -5,6 +5,7 @@ use App\Http\Livewire\Credentials\Index as CredentialsIndex;
 use App\Http\Livewire\Credentials\Show as CredentialsShow;
 use App\Http\Livewire\Credentials\Edit as CredentialsEdit;
 use App\Http\Livewire\Credentials\Create as CredentialsCreate;
+use App\Http\Livewire\Credentials\Types as CredentialsTypes;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,4 +43,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     // Delete credential
     Route::delete('/credentials/{credential}', [CredentialController::class, 'remove'])->name('credentials.remove');
+
+    // Credential types
+    Route::get('/credential-types', CredentialsTypes::class)->name('credentials.types');
 });

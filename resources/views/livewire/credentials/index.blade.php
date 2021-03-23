@@ -8,6 +8,7 @@
                     <a href="{{ route('credentials.create') }}" class="bg-blue-400 text-white px-4 py-1 ml-4 rounded text-sm">Create new credential</a>
                 </div>
 
+                <!-- Details -->
                 <table class="table-auto min-w-full my-8">
                     <thead>
                         <tr class="text-left border-b-2 border-gray-400">
