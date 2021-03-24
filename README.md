@@ -10,7 +10,15 @@ For starting you should install dependencies packages by the composer:
 composer install
 ```
 
-After install composer packages, you should create a MySQL database & change the `DB_DATABASE` value to the database name in the .env file. After these steps you should enter the below commands to create tables in the database:
+Then, You should copy the .env.example file to a new file with the .env name.
+
+Then you should run below command to create app key:
+
+```bash
+php artisan key:generate
+```
+
+After installing composer packages and preparing the .env file, you should create a MySQL database & change the `DB_DATABASE` value to the database name in the .env file. After these steps you should enter the below commands to create tables in the database:
 
 ```bash
 php artisan migrate
