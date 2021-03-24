@@ -34,7 +34,20 @@ php artisan db:seed
 
 Environment variables are in the .env.example that should be copied in the .env file.
 
+## Login/Register
+
+With running `php artisan db:seed` command, A test user will create for you and you can login by '/login' route. But if you want to create a new user you can use '/register' route.
+
+## Tests
+
+I've prepared some test for credential and credential types that you can run it by below command:
+
+```bash
+php artisan test
+```
+
 ## Contributing
 
 MohammadReza Haghighi: [LinkedIn Account](https://www.linkedin.com/in/mr-haghighi/)
+
 MohammadReza Haghighi: [Github](https://github.com/mrhaghighi)
