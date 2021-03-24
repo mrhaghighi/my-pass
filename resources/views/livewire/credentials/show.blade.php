@@ -21,7 +21,11 @@
                     <div class="flex flex-row my-3">
                         <div class="font-bold w-max mr-2">URL: </div> 
                         <div>
-                            {!! '<a href="$credential->url" class="text-blue-400 underline">Go to website</a>' ?? 'No URL' !!}
+                            @if ($credential->url)
+                                <a href="{{$credential->url}}" class="text-blue-400 underline" target="_blank">Go to website</a>
+                            @else
+                                'No URL'
+                            @endif
                         </div>
                     </div>
                     <div class="flex flex-row my-3">

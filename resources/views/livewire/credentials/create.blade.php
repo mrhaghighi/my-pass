@@ -43,7 +43,7 @@
                     <div class="flex flex-row my-3">
                         <div class="font-bold w-1/12">Password: </div>
                         <div class="w-11/12">
-                            <input wire:model.defer="password" class="border rounded border-gray-300 p-1" value="{{ old('password') }}">
+                            <input wire:model.defer="password" type="password" class="border rounded border-gray-300 p-1" value="{{ old('password') }}">
                         </div>
                     </div>
                     <div class="flex flex-row my-3">
