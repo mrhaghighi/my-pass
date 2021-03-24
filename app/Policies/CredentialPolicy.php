@@ -19,7 +19,7 @@ class CredentialPolicy
      */
     public function view(User $user, Credential $credential)
     {
-        return $user->id === $credential->user_id;
+        return $user->id == $credential->user_id;
     }
 
     /**
@@ -42,7 +42,7 @@ class CredentialPolicy
      */
     public function update(User $user, Credential $credential)
     {
-        return $user->id === $credential->user_id;
+        return $user->id == $credential->user_id;
     }
 
     /**
@@ -54,6 +54,6 @@ class CredentialPolicy
      */
     public function delete(User $user, Credential $credential)
     {
-        return $user->id === $credential->user_id;
+        return $user->id == $credential->user_id;
     }
 }
